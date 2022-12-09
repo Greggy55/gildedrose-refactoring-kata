@@ -43,14 +43,7 @@ void GildedRose::updateQuality()
         {
             if (items[i].name != "Aged Brie")
             {
-                if (items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].quality > 0 && items[i].name != "Sulfuras, Hand of Ragnaros")
-                {
-                    items[i].quality--;
-                }
-                else
-                {
-                    items[i].quality--;
-                }
+                items[i].quality--;
             }
             else if (items[i].quality < 50)
             {
