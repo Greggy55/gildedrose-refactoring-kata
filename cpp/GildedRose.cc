@@ -21,28 +21,25 @@ void GildedRose::updateQuality()
                 }
             }
         }
-        else
+        else if (items[i].quality < 50)
         {
-            if (items[i].quality < 50)
+            items[i].quality++;
+
+            if (items[i].name == "Backstage passes to a TAFKAL80ETC concert")
             {
-                items[i].quality++;
-
-                if (items[i].name == "Backstage passes to a TAFKAL80ETC concert")
+                if (items[i].sellIn < 11)
                 {
-                    if (items[i].sellIn < 11)
+                    if (items[i].quality < 50)
                     {
-                        if (items[i].quality < 50)
-                        {
                             items[i].quality++;
-                        }
                     }
+                }
 
-                    if (items[i].sellIn < 6)
+                if (items[i].sellIn < 6)
+                {
+                    if (items[i].quality < 50)
                     {
-                        if (items[i].quality < 50)
-                        {
-                            items[i].quality++;
-                        }
+                        items[i].quality++;
                     }
                 }
             }
@@ -72,12 +69,9 @@ void GildedRose::updateQuality()
                     items[i].quality = items[i].quality - items[i].quality;
                 }
             }
-            else
+            else if (items[i].quality < 50)
             {
-                if (items[i].quality < 50)
-                {
-                    items[i].quality++;
-                }
+                items[i].quality++;
             }
         }
     }
